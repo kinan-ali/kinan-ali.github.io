@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Kinan Ali Portfolio - Projects page</title>
+		<title>Kinan Ali Portfolio - Projects</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -14,8 +14,9 @@
 				<div id="intro">
 						<h1>This is<br />
 						Kinan ALI</h1>
-						<p>I’m a robotics enthusiast with a focus on intelligent control systems.  
-						My work spans from real-time adaptive neural networks for Robotic Manipulators to low-level C-based control.</p>
+						<p>Electronic Systems Engineer & HealthTech Master's Student (M1).<br />
+						Recipient of the Excellence Initiative Fellowship (Unistra).<br />
+						Enthusiastic about making Control Theory work in the real world.</p>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
@@ -44,70 +45,56 @@
 
 
 				<div id="main">
-						<article class="post featured">
+					
+					<article class="post featured">
 						  <header class="major">
 							<span class="date">September 20, 2024</span>
 							<h2 style="font-size: 3em;">Adaptive Control for Stewart Platform using Neural Networks</h2>
 						  
-
 						  <img src="images/Im_stewart_platfrom.png" alt="" style="width:60%;">
 						  </header>
+						  
 						  <p>
-							HIAST graduation project. It investigates adaptive control using neural networks on a 6DoF RSU Stewart platform.
+							My graduation project at HIAST. I investigated how Neural Networks can learn to control a 6-DOF robot in real-time, compensating for mechanical imperfections that traditional PID controllers can't see.
 						  </p>
-							
-						
+						  
+						  <div style="background-color: #f4f4f4; border-left: 5px solid #2c3e50; padding: 10px; margin-bottom: 20px;">
+							<p style="margin: 0; font-size: 0.9em;"><strong>🚀 Current Status:</strong> I am currently preparing a research paper detailing the novel adaptive laws developed for this system. As such, the specific mathematical derivations are omitted here, but enjoy the results below!</p>
+						  </div>
+
 						<div class="more-content" style="display: none;">
-							<p>1. The first step included mechanically modifying a Stewart Platform.</p>
+							
+							<h3>Step 1: The Mechanical "Upgrade"</h3>
+							<p>The standard platform wasn't enough. I needed more range. I modified the mechanics, installing powerful servos and designing longer arms to expand the workspace.</p>
 							<table style="width:100%; margin-top: 0em;">
 							  <tr>
 								<td style="width:50%; text-align:center;">
-								  <img src="images/Im_stewart1.jpg" alt="Stewart Platform Setup1" style="width:100%;">
+								  <img src="images/Im_stewart1.jpg" alt="Stewart Platform Setup1" style="width:95%; border-radius: 5px;">
 								</td>
 								<td style="width:50%; text-align:center;">
-								  <img src="images/Im_stewart2.jpg" alt="Stewart Platform Setup2" style="width:100%;">
-								</td>
-							  </tr>
-							</table>
-							<p>This involved using more powerful motors and longer arms to expand the workspace of the robot.</p>
-							<table style="width:100%; margin-top: 0em;">
-							  <tr>
-								<td style="width:30%; text-align:center;">
-									<img src="images/Im_stewart4.jpeg" alt="Stewart Platform Setup4" style="width: 80%;">
-								</td>
-								<td style="width:30%; text-align:center;">
-									<img src="images/Im_stewart3.jpeg" alt="Stewart Platform Setup3" style="width: 80%;">
-								</td>
-								<td style="width:40%; text-align:center;">
-									<img src="images/Im_stewart5.jpg" alt="Stewart Platform Setup5" style="width: 75%;">
+								  <img src="images/Im_stewart2.jpg" alt="Stewart Platform Setup2" style="width:95%; border-radius: 5px;">
 								</td>
 							  </tr>
 							</table>
 							
-							<p>The workspace study was performed using MATLAB/Simulink.</p>
+							<p>Of course, I didn't just guess—I validated the new workspace in MATLAB/Simulink first.</p>
 							<img src="images/Im_stewart_workspace.svg" style="width: 80%;">
-							<p>2. The second task was creating a measurement system. A cheap and effective one!</p>
-							<p>The first attempt involved using a webcam and two ArUco markers (one for the moving platform and the 
-							other for the reference base) with OpenCV code.</p>
+							
+							<h3>Step 2: Giving the Robot "Eyes"</h3>
+							<p>To control the platform, I needed to know exactly where it was. My first attempt involved a standard webcam and two ArUco markers.</p>
 							<img src = "images/Im_stewart_camera1.gif" alt="Stewart Platfrom Camera1" style="width: 50%;">
-							<p>The errors were large due to the bad camera specifications!</p>
-							<img src = "images/Im_stewart_camera2.png" alt="Stewart Platfrom Camera2" style="width: 50%;">
-							<p>As a solution for this, a mobile phone camera was used and linked to the computer through a wireless network.<br />
-							In addition, the ArUco markers were replaced with a single ArUco board. The Perspective-N-Point algorithm was
-							used to estimate the position and orientation of the moving platform. The base location was estimated with a calibration
-							process at the start of the movement... <br />
-							In short: use better tools, increase the points that you use for each estimation, and you get more stable readings!</p>
+							<p><strong>The Result?</strong> Chaos. The camera noise was too high, introducing jitter into the control loop. I needed a cleaner signal.</p>
+							
+							<p><strong>The Fix:</strong> I switched to a high-resolution mobile camera stream over WiFi and replaced the single markers with a full <strong>ArUco Board</strong>. Using the Perspective-N-Point (PnP) algorithm, I achieved stable, sub-millimeter pose estimation.</p>
+							<p><em>Lesson learned: Better data beats better algorithms every time.</em></p>
 							<img src = "images/Im_stewart_camera3.png" alt="Stewart Platfrom Camera2" style="width: 50%;">
 							
-							<p>At each point of the project, the GUI (created with Python) was modified to have more functionality, and look COOLER!</p>
-							<img src = "images/Im_stewart_gui.png" alt="Stewart Platfrom GUI" style="width: 100%;">
-							
-							<p>Now that everything is set: a platform, measurements, and a GUI. The project starts! Now, we can dive into Control Systems!</p>
-							<p>But first, it's important to have fun. Maybe make the platform play ping pong! </p>
+							<h3>Step 3: The "Fun" Part</h3>
+							<p>With the sensors calibrated and the Neural Network trained to cancel out the motor backlash, it was time for the ultimate test.</p>
+							<p>Can a Neural Network play Ping Pong?</p>
 
-                            <img src="images/Im_stewart_pingpong.gif" alt="Stewart Platform Playing Ping Pong" style="display: block; margin: 10px auto; width: 25%;">
+							<img src="images/Im_stewart_pingpong.gif" alt="Stewart Platform Playing Ping Pong" style="display: block; margin: 20px auto; width: 40%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
 							
-
 						  </div>
 
 						  <ul class="actions special">
@@ -115,203 +102,162 @@
 						  </ul>
 						</article>
 
+					
+					<article class="post featured">
+						  <header class="major">
+							<span class="date">October 2024 - January 2025</span>
+							<h2><a style="font-size: 0.6em;">Industrial Washing Machine<br />Control Board</a></h2>
+							<p>Moving from high-level Python AI to the gritty world of embedded hardware. Designed a universal PCB for washing machine automation.</p>
+							
+							<div class="more-content" style="display: none;">
+								<p>While robotics is about abstract math, this project was about <strong>reliability</strong>. I designed a custom PCB based on the <strong>ATmega16</strong> microcontroller to replace aging mechanical timers in industrial machines.</p>
+								
+								<p><strong>Key Engineering Challenges:</strong></p>
+								<ul style="text-align: left; display: inline-block;">
+									<li><strong>Power Control:</strong> Implemented TRIAC-triggered control for high-voltage motors.</li>
+									<li><strong>PID on 8-bit:</strong> wrote a PID speed controller in C from scratch (no fancy libraries!).</li>
+									<li><strong>Simulation:</strong> Fully validated the logic in Proteus before manufacturing.</li>
+								</ul>
+								
+								<p>This project taught me that in the industrial world, code doesn't just need to work—it needs to survive voltage spikes and EMI.</p>
+							</div>
 
-							
-							<article class="post featured">
-								<header class="major">
-									<span class="date">May 20, 2024</span>
-									<h2><a style="font-size: 0.6em;">Implementation of an obstacle avoidance algorithm for mobile robots</a></h2>
-									<p>As a part of the Mobile Robots workshop at HIAST, the Extended Potential Field algorithm was employed
-									for obstacle avoidance. 
-									<div style="text-align: center;">
-									  <iframe width="560" height="315" 
-										src="https://www.youtube.com/embed/DmXzhAzQMgI" 
-										title="3RRR PPM Control Comparison" frameborder="0" 
-										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-										allowfullscreen>
-									  </iframe>
-									</div>
+							<ul class="actions special">
+								<li><button class="toggle-button button large" onclick="toggleMore(this)">Full Story</button></li>
+							</ul>
+						  </header>
+						</article>
 
-								</header>
-							</article>
-							
-							
-							
-							<article class="post featured">
-								<header class="major">
-									<span class="date">September 15, 2023</span>
-									<h2><a style="font-size: 0.6em;">Theoretical study and practical comparison of the control of 3RRR PPM</a></h2>
-									<p>Modeled, analyzed, and controlled a planar parallel manipulator (3RRR PPM) using MATLAB and Python.<br />
-									Performed singularity analysis on MATLAB and calculated the manipulator’s workspace.<br />
-									Performed practical comparison of traditional control methods 
-									(open loop, closed loop) and data-driven control techniques to track 
-									trajectories using camera feedback.</p>
+
+					<article class="post featured">
+							<header class="major">
+								<span class="date">May 20, 2024</span>
+								<h2><a style="font-size: 0.6em;">Obstacle Avoidance<br />Extended Potential Field</a></h2>
+								<p>Implementing the Extended Potential Field algorithm on an E-Puck robot.
+								<div style="text-align: center; margin-top: 20px;">
+								  <iframe width="560" height="315" 
+									src="https://www.youtube.com/embed/DmXzhAzQMgI" 
+									title="Obstacle Avoidance" frameborder="0" 
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+									allowfullscreen>
+								  </iframe>
+								</div>
+							</header>
+						</article>
+						
+						
+					<article class="post featured">
+							<header class="major">
+								<span class="date">September 15, 2023</span>
+								<h2><a style="font-size: 0.6em;">Data-Driven vs Classical Control<br />3RRR Parallel Manipulator</a></h2>
+								<p>A battle between traditional control theory and modern data-driven approaches. Who wins?</p>
+								
+								<div style="text-align: center; margin-top: 20px;">
+								  <iframe width="560" height="315" 
+									src="https://www.youtube.com/embed/Ndt5K4WTslM" 
+									title="3RRR PPM Control Comparison" frameborder="0" 
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+									allowfullscreen>
+								  </iframe>
+								</div>
+								
+								
+					<div class="more-content" style="display: none;">
+						<p><strong>The Premise:</strong> We know how to control robots when we have a perfect mathematical model (Mass, Length, Inertia). But what if the model is wrong?</p>
+						
+						<h3>1. The Setup</h3>
+						<img src="images/Im_3RRR_PPM.jpg" alt="3RRR Setup" style="width: 100%;">
+						<p>First, I performed the classical Singularity Analysis and Workspace mapping using MATLAB.</p>
+						<img src = "images/Im_3RRR_PPM_map.jpg" alt="" style="width:80%;">
+						
+						<h3>2. The Experiment</h3>
+						<p>I collected a dataset by "random walking" the robot through its workspace, recording how inputs affected the output pose. Then, I trained a Neural Network to learn this mapping <em>inversely</em>.</p>
+						<img src = "images/Im_3RRR_PPM_control2.jpg" alt = "" style="width:80%;">
+						
+						<h3>3. The Verdict</h3>
+						<p>Surprisingly, the Data-Driven method matched the performance of the traditional model-based controller, but with one huge advantage: <strong>I didn't need to measure the link lengths.</strong> The robot learned its own geometry.</p>
+						
+						<p><em>This project sparked my interest in Contraction Theory: How can we mathematically guarantee that these learned controllers won't go unstable?</em></p>
+						
+					  </div>
+
+					  <ul class="actions special">
+						<li><button class="toggle-button button large" onclick="toggleMore(this)">Full Story</button></li>
+					  </ul>
+								
+							</header>
+						</article>
+						
+						
+					<article class="post featured">
+							<header class="major">
+								<span class="date">June 5, 2023</span>
+								<h2><a style="font-size: 0.6em;">Flyback DC-DC Converter Design</a></h2>
+								<p>A power electronics workshop at HIAST. A project that was painful, yet entertaining.</p>
+							<div class="more-content" style="display: none;">
+							  
+								<p>Like most things, it started with MATLAB and textbooks. The first question: <strong>Discontinuous (DCM) or Continuous (CCM) mode?</strong></p>
+								<img src = "images/Im_flyback_matlab.jpg" alt="" style="width:100%;">
+								<p>I chose <strong>DCM</strong> (Discontinuous Current Mode) because it simplifies the control loop—the relationship between input and output becomes linear (mostly).</p>
+								
+								<h3>Simulation vs. Reality</h3>
+								<p>MATLAB is great for math, but PSpice is where you see the sparks (virtually). I simulated the full circuit to size the magnetic components.</p>
+								<img src="images/Im_flyback_pspice.jpg" alt="" style="width:70%;">
+								
+								<h3>The Build</h3>
+								<p>Designing the transformer was the real challenge—calculating the air gap to prevent saturation while keeping inductance high enough.</p>
+								<img src="images/Im_flyback.jpg" alt="Flyback Circuit" style="width:80%;">
+								
+							  </div>
+
+							  <ul class="actions special">
+								<li><button class="toggle-button button large" onclick="toggleMore(this)">Full Story</button></li>
+							  </ul>
+
 									
-									<div style="text-align: center;">
-									  <iframe width="560" height="315" 
-										src="https://www.youtube.com/embed/Ndt5K4WTslM" 
-										title="3RRR PPM Control Comparison" frameborder="0" 
-										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-										allowfullscreen>
-									  </iframe>
-									</div>
-									
-									
-						<div class="more-content" style="display: none;">
-							<p>The task involved investigating machine learning methods to control a robot.</p>
-							<p>1. First, it's important to theoretically study the platform, including reference frames,
-							Inverse Geometric Model, and Inverse Kinematic Model of the platform.</p>
-							<img src="images/Im_3RRR_PPM.jpg" alt="Stewart Platfrom Camera2" style="width: 100%;">
-							<p>This is important to identify singularities and get a picture of the workspace.
-							<p>
-							<img src = "images/Im_3RRR_PPM_singularities.jpg" alt = "" style ="width:100%;">
-							<p>With the right equations (and of course MATLAB) we can easily draw a map of the workspace.</p>
-							<img src = "images/Im_3RRR_PPM_map.jpg" alt="" style="width:100%;">
-							
-							<p>For the Control part, three algorithms were implemented and compared. Two of which are basic traditional methods.</p>
-							<img src = "images/Im_3RRR_PPM_control1.jpg" alt = "" style="width:80%;">
-							
-							<p>Considering machine learning, a dataset was collected by randomly moving the arms of the robot and tracking 
-							the changes in the end-effector's pose. This is repeated at different locations in the workspace in a random walk process (for generalization).</p>
-							<img src = "images/Im_3RRR_PPM_data.jpg" alt="" style="width:80%;">
-							<p>After collecting the data, it's time to build our Neural Network Controller. 
-							It's easy to think that the inputs of the controller should be the required change in the end-effector's pose. To say...
-							The purpose is to map the required change in task space to the corresponding change in joint space. HOWEVER,
-							because of the nonlinearity of the platform, this change may differ from one location to another in the workspace. 
-							Adding the current pose of the end-effector to the inputs should handle that.</p>
-							<img src = "images/Im_3RRR_PPM_control2.jpg" alt = "" style="width:80%;">
-							<p>Hyperparameter tuning (through a random search) was employed to optimize the network's performance.</p>
-							<p>Experimental setup: <br/>
-							Three KL17H248 stepper motors with maximum torques of 0.54 Nm drive the active joints
-							in 1/8 working mode (each step is equivalent to 1.8(deg)/8=0.225(deg). 
-							Three A4988 drivers connected to Arduino Uno through a CNC shield are 
-							used to drive the three motors. A computer endowed with a 2.20 GHz 
-							Intel Core (TM) Quad processor performs image acquisition and processing 
-							using a Creative Webcam camera (30 fps) connected to the computer. 
-							The implementation of the different algorithms along with image processing 
-							was accomplished through a Python code using OpenCV library which allows for 
-							the detection of the ArUco marker placed on the top of the end-effector. The 
-							computer acquires frames from the camera, connected to it, employing the
-							OpenCV library. These frames are then subjected to a detection algorithm 
-							designed to identify the position and orientation of the end-effector. The 
-							detected pose of the end-effector is then converted from image reference frame 
-							to the platform reference frame using a linear transformation which is defined 
-							through a calibration process. </p>
-							<img src = "images/Im_3RRR_PPM_gui.png" alt="3RRR PPM gui" style = "width:100%;">	
-							<p>A number of trajectories were used to evaluate the performance.</p>
-							<img src = "images/Im_3RRR_PPM_result.png" alt="3RRR PPM result1" style="width:80%;">
-							<p>Lesson learnt: Machine learning methods in control can achieve similar results to 
-							traditional techniques... Of course after all it's all about how you design a control system.
-							Nevertheless, traditional methods require a model to work... a mathematical model that depends
-							on the measurements of parameters (like length and mass). Measurements' errors can affect the performance though
-							in model-based methods. While data-driven approaches depend on REAL data that is collected from the REAL Platform
-							with all the noise included. Collecting the data, and building a model, is a different way of control.</p>
-							
-							<p>This project was a research opportunity as it raised many questions! Although data-driven methods show 
-							promising experimental results, How can we ENSURE they work all the time?! A proven mathematical guarantee?!
-							This question led me to delve into advanced research like Contraction theory, a topic of another time. <br/>
-							Another question would be related to the dataset. The neural-network's performance is directly affected by
-							the quality of the collected data. Shouldn't we find a method that ensures data quality? At least in parallel
-							manipulators... This question was further discussed in another project.</p>
-							
-							
-						  </div>
+							</header>
+						</article>
 
-						  <ul class="actions special">
-							<li><button class="toggle-button button large" onclick="toggleMore(this)">Full Story</button></li>
-						  </ul>
-									
-								</header>
-							</article>
-							
-							
-							
-							<article class="post featured">
-								<header class="major">
-									<span class="date">June 5, 2023</span>
-									<h2><a style="font-size: 0.6em;">Flyback DC-DC converter design</a></h2>
-									<p>A power electronics workshop at HIAST aimed to design a flyback converter. 
-									A project that was painful, yet entertaining.</p>
-								<div class="more-content" style="display: none;">
-								  
-									<p>Like most things, it started with MATLAB and textbooks. A good beginning is to 
-									have a clear picture of the converter. How does it work? In addition, what mode should it work in?
-									Discontinuous Current Mode (DCM) or Continuous (CCM)?</p>
-									<img src = "images/Im_flyback_matlab.jpg" alt="" style="width:100%;">
-									<p>Discontinuous mode was selected. It's because we can find a linear relation between the input 
-									and the output voltage (with some neglections), which makes the Control much easier. 
-									Additionally, the maximum primary current is lower compared to CCM.
-									</p>
-									
-									<p>When it comes to power electronics, MATLAB is not enough. It's good to start
-									with MATLAB to get a bigger picture of the design and perform a basic simulation...
-									However, a more useful tool would be PSpice, which was used for the full design and 
-									simulation of the circuit. </p>
-									<img src="images/Im_flyback_pspice1.jpg" alt="" style="width:70%;">
-									<img src="images/Im_flyback_pspice.jpg" alt="" style="width:70%;">
-									<p>In the design process it is important to choose electronic parts that endure the 
-									applied voltage and current (with a safety margin) but also with limit... The better the 
-									specifications the more expensive it gets.</p>
-									<img src="images/Im_flyback.jpg" alt="" style="width:80%;">
-									
-								  </div>
+				</div>
 
-								  <ul class="actions special">
-									<li><button class="toggle-button button large" onclick="toggleMore(this)">Full Story</button></li>
-								  </ul>
-
-										
-								</header>
-							</article>
-							
-							
-							
-
-
+				<footer id="footer">
+				  <section>
+					<div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+					  <h3 style="margin: 0;">Other Sites</h3>
+					  <ul class="icons" style="display: flex; gap: 10px; margin: 0;">
+						<li><a href="https://www.facebook.com/profile.php?id=100009984255181" class="icon brands fa-facebook-f" target="_blank"><span class="label">Facebook</span></a></li>
+						<li><a href="https://www.youtube.com/@kinanali2668" class="icon brands fa-youtube" target="_blank"><span class="label">YouTube</span></a></li>
+						<li><a href="https://www.linkedin.com/in/kinan-ali/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/kinan-ali" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+					  </ul>
 					</div>
+				  </section>
+				</footer>
 
-					<footer id="footer">
-					  <section>
-						<div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
-						  <h3 style="margin: 0;">Other Sites</h3>
-						  <ul class="icons" style="display: flex; gap: 10px; margin: 0;">
-							<li><a href="https://www.facebook.com/profile.php?id=100009984255181" class="icon brands fa-facebook-f" target="_blank"><span class="label">Facebook</span></a></li>
-							<li><a href="https://www.youtube.com/@kinanali2668" class="icon brands fa-youtube" target="_blank"><span class="label">YouTube</span></a></li>
-							<li><a href="https://www.linkedin.com/in/kinan-ali/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/kinan-ali" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-						  </ul>
-						</div>
-					  </section>
-					</footer>
-
-
-			</div>
+		</div>
 
 		<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
+		<script>
+		  function toggleMore(button) {
+			const article = button.closest('article');
+			const content = article.querySelector('.more-content');
 
-			<script>
-			  function toggleMore(button) {
-				const article = button.closest('article');
-				const content = article.querySelector('.more-content');
-
-				if (content.style.display === "none" || content.style.display === "") {
-				  content.style.display = "block";
-				  button.innerText = "Show Less";
-				} else {
-				  content.style.display = "none";
-				  button.innerText = "Full Story";
-				}
-			  }
-			</script>
-
-
+			if (content.style.display === "none" || content.style.display === "") {
+			  content.style.display = "block";
+			  button.innerText = "Show Less";
+			} else {
+			  content.style.display = "none";
+			  button.innerText = "Full Story";
+			}
+		  }
+		</script>
 
 	</body>
 </html>

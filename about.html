@@ -1,12 +1,7 @@
 <!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
-		<title>Kinan Ali Portfolio - about page</title>
+		<title>Kinan Ali - About Me</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -14,26 +9,23 @@
 	</head>
 	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+		<div id="wrapper" class="fade-in">
 
-				<!-- Intro -->
-					<div id="intro">
+				<div id="intro">
 						<h1>This is<br />
 						Kinan ALI</h1>
-						<p>I’m a robotics enthusiast with a focus on intelligent control systems.  
-						My work spans from real-time adaptive neural networks for Robotic Manipulators to low level C-based control.</p>
+						<p>Electronic Systems Engineer & HealthTech Master's Student (M1).<br />
+						Recipient of the Excellence Initiative Fellowship (Unistra).<br />
+						Enthusiastic about making Control Theory work in the real world.</p>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
 					</div>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Kinan Potfolio</a>
+				<header id="header">
+						<a href="index.html" class="logo">Kinan Portfolio</a>
 					</header>
 
-				<!-- Nav -->
 				<nav id="nav">
 					<ul class="links">
 						<li> <a href="index.html">Home</a></li>
@@ -52,196 +44,140 @@
 				</nav>
 
 
-				<!-- Main -->
-					<div id="main">
+				<div id="main">
 
-						<!-- Featured Post -->
-							<article class="post featured">
+						<article class="post featured">
 								<header class="major">
-									<p>
-									I completed my Bachelor’s degree at the <a href = "https://hiast.edu.sy/en">Applied Sciences & 
-									Technology (HIAST)</a> in October 2024, following my 
-									High School degree at the <a href = "https://ncd.sy/">National Center for the Distinguished</a> in 2019.
-									My academic interests focus on control theory, adaptive systems, and machine learning. </p>
-									
+									<h2>My Background</h2>
+									<p style="text-align: left;">
+									I completed my Bachelor’s degree at the <a href = "https://hiast.edu.sy/en">Higher Institute for Applied Sciences & Technology (HIAST)</a> in October 2024, graduating as the <strong>Top Student</strong> in my class. 
+									Currently, I am pursuing my MSc in HealthTech at the University of Strasbourg.
+									</p>
+									<p style="text-align: left;">
+									<strong>My Philosophy:</strong> From an early stage, I enjoyed asking "why" and "how". This curiosity led me to the Physics Olympiad and eventually to Engineering. I am fascinated by what happens when mathematical theory meets the imperfections of the real world—dealing with noise, backlash, and uncertainty is where the real engineering happens.
+									</p>
+								</header>
 							</article>
 						
 						
-						
-						<!-- My Skills-->
-						<section>
-						  <header class="major">
-							<h2>Skills</h2>
-						  </header>
-						  <p>
-							I have experience in both hardware and software domains. On the hardware side, I’ve worked 
-							with microcontrollers (Arduino, Atmega(8, 16, 328), sensors, actuators, robotic manipulators. 
-							On the software side, I’m skilled in Python, MATLAB, C++, 
-							and familiar with tools like ROS, OpenCV, and TensorFlow. My control systems work 
-							often includes simulations and real-time implementations.
-						  </p>
-						</section>
-						<!-- Posts -->
-							<section class="posts">
+						<section class="posts">
+								
 								<article>
 									<header>
-										<span class="date">June, 2024</span>
-										<h2><a href="#">Participation<br /></a>
-										<a href= "https://www.hitech.sy/"> 3rd Hitech Conference on Intelligent Systems</a></h2>
+										<span class="date">June 2024</span>
+										<h2><a href="https://www.hitech.sy/">1st Place Award<br />
+										3rd HiTech Conference</a></h2>
 									</header>
 									
-									<!-- Image Slideshow -->
 									<div style="text-align: center;">
-									  <img id="slideshow" src="images/Im_hitech1.jpg" alt="Slideshow Image" style="width: 100%; max-width: 600px; border-radius: 5px;">
+										<img id="slideshow" src="images/Im_hitech1.jpg" alt="HiTech Conference Presentation" style="width: 100%; max-width: 600px; border-radius: 5px; height: 300px; object-fit: cover;">
 									</div>
 
 									<script>
-									  // Array of image paths
-									  const images = [
-										"images/Im_hitech1.jpg",
-										"images/Im_hitech2.jpg",
-										"images/Im_hitech3.jpg",
-										"images/Im_hitech4.jpg",
-										"images/Im_hitech5.jpg",
-									  ];
-
-									  let index = 0;
-									  const slideshow = document.getElementById("slideshow");
-
-									  setInterval(() => {
-										index = (index + 1) % images.length;
-										slideshow.src = images[index];
-									  }, 3500); // Change image every 3 seconds
+										const images = [
+											"images/Im_hitech1.jpg",
+											"images/Im_hitech2.jpg",
+											"images/Im_hitech3.jpg",
+											"images/Im_hitech4.jpg",
+											"images/Im_hitech5.jpg",
+										];
+										let index = 0;
+										const slideshow = document.getElementById("slideshow");
+										setInterval(() => {
+											index = (index + 1) % images.length;
+											slideshow.src = images[index];
+										}, 3500); 
 									</script>
 
-									<p>I participated in the HiTech 3rd Conference on Intelligent Systems with my forth-year 
-									project: "Theoretical Study and Practical Comparison of 3RRR Planar Parallel Manipulator 
-									Control." The project explored data-driven vs. classical control methods for a robotic manipulator.
-									Awarded 1st place among university projects across Syria, the conference was a transformative 
-									experience—presenting research, receiving expert feedback, 
-									and connecting with leading minds in AI and robotics.</p>
-	
+									<p>I participated in the HiTech Conference on Intelligent Systems with my fourth-year project: <em>"Theoretical Study and Practical Comparison of 3RRR Planar Parallel Manipulator Control."</em></p>
+									<p>My project was awarded <strong>1st Place</strong> among university projects across Syria. It was a transformative experience—presenting research to experts and defending my findings on data-driven vs. classical control.</p>
 								</article>
-								
-								
-								
 								
 								
 								<article>
 									<header>
-										<span class="date">October, 2024</span>
-										<h2><a href="#">Participation<br /></a>
-										<a href= "https://www.damascusuniversity.edu.sy/index.php?lang=2&set=4&type=1&id=7950">The Faculty of Mechanical and Electrical Engineering Exhibition (FMEE)</a></h2>
+										<span class="date">October 2024</span>
+										<h2><a href="https://www.damascusuniversity.edu.sy/index.php?lang=2&set=4&type=1&id=7950">Exhibitor<br />
+										FMEE Exhibition (SyriaPlast)</a></h2>
 									</header>
 									
-									<!-- Image Slideshow -->
 									<div style="text-align: center;">
-									  <img id="slideshow-fmee" src="images/Im_fmee1.jpeg" alt="Slideshow Image" style="width: 100%; max-width: 600px; border-radius: 5px;">
-
+										<img id="slideshow-fmee" src="images/Im_fmee1.jpeg" alt="FMEE Exhibition" style="width: 100%; max-width: 600px; border-radius: 5px; height: 300px; object-fit: cover;">
 									</div>
+
 									<script>
-									  const images_fmee = [
-										"images/Im_fmee1.jpeg",
-										"images/Im_fmee2.jpeg",
-										"images/Im_fmee3.jpeg",
-										"images/Im_fmee4.jpeg",
-										"images/Im_fmee5.jpeg"
-									  ];
-
-									  let index_fmee = 0;
-									  const slideshow_fmee = document.getElementById("slideshow-fmee");
-
-									  setInterval(() => {
-										index_fmee = (index_fmee + 1) % images_fmee.length;
-										slideshow_fmee.src = images_fmee[index_fmee];
-									  }, 3900);
+										const images_fmee = [
+											"images/Im_fmee1.jpeg",
+											"images/Im_fmee2.jpeg",
+											"images/Im_fmee3.jpeg",
+											"images/Im_fmee4.jpeg",
+											"images/Im_fmee5.jpeg"
+										];
+										let index_fmee = 0;
+										const slideshow_fmee = document.getElementById("slideshow-fmee");
+										setInterval(() => {
+											index_fmee = (index_fmee + 1) % images_fmee.length;
+											slideshow_fmee.src = images_fmee[index_fmee];
+										}, 3900);
 									</script>
 									
-									<p>I showcased my HIAST graduation project, "Adaptive Neural Control of 
-									a Stewart Platform with Rotary Servos," at the Faculty of Mechanical and 
-									Electrical Engineering (FMEE) pavilion during SyriaPlast 2024. The project 
-									tackled robotic control under dynamic uncertainties (e.g., motor backlash) 
-									through:<br/>
-
-									- A neural-based adaptive controller replacing traditional 
-									inverse kinematics.<br/>
-
-									- Data-driven vs. classical control comparisons for precision.<br/>
-
-									- Novel algorithms for hysteresis compensation and data collection.<br/></p>
-									
-									
+									<p>I showcased my graduation project, <em>"Adaptive Neural Control of a Stewart Platform,"</em> at the Faculty of Mechanical and Electrical Engineering pavilion. The project tackled control under dynamic uncertainties through:</p>
+									<ul style="text-align: left;">
+										<li>Neural-based adaptive controllers replacing inverse kinematics.</li>
+										<li>Comparison of Data-driven vs. Classical control.</li>
+										<li>Novel algorithms for hysteresis compensation.</li>
+									</ul>
 								</article>
-								
-								
-								
 								
 								
 								<article>
 									<header>
-										<span class="date">2022, 2023</span>
-										<h2><a href="#">Guitar tutor<br />
+										<span class="date">2017 - 2019</span>
+										<h2><a href="https://www.dcagency.org/">National Team Member<br />
+										Physics Olympiad</a></h2>
+									</header>
+									<div style="text-align: center;">
+										<img id="slideshow-olympiad" src="images/Im_olympiad1.jpg" alt="Physics Olympiad" style="width: 100%; max-width: 600px; border-radius: 5px; height: 300px; object-fit: cover;">
+									</div>
+
+									<script>
+										const images_olympiad = [
+											"images/Im_olympiad1.jpg",
+											"images/Im_olympiad2.jpg",
+											"images/Im_olympiad3.jpg",
+											"images/Im_olympiad4.jpg",
+											"images/Im_olympiad5.jpg",
+											"images/Im_olympiad6.jpg"
+										];
+										let index_olympiad = 0;
+										const slideshow_olympiad = document.getElementById("slideshow-olympiad");
+										setInterval(() => {
+											index_olympiad = (index_olympiad + 1) % images_olympiad.length;
+											slideshow_olympiad.src = images_olympiad[index_olympiad];
+										}, 3000);
+									</script>
+									<p>Selected for the National Team (Top 10 nationwide). This experience built my foundation in classical mechanics and taught me the discipline required to solve complex physical problems.</p>
+								</article>
+
+
+								<article>
+									<header>
+										<span class="date">Hobby</span>
+										<h2><a href="#">Guitarist & Tutor<br />
 										HIAST Guitar Club</a></h2>
 									</header>
-									<a href="#" class="image fit"><img src="images/Im_guitar1.jpg" alt="" /></a>
-									<p>I've been plyaing guitar for since 2019. I have participated as a Guitar
-									tutor in HIAST Guitar Club.</p>
-									<p>I love playing classical pieces, and I enjoy listening to Blues, Metal, and old Arabic songs.</p>
-
+									<a href="#" class="image fit"><img src="images/Im_guitar1.jpg" alt="Playing Guitar" style="height: 300px; object-fit: cover;" /></a>
+									<p>I have been playing guitar since 2019. I enjoy playing classical pieces as well as Blues and Metal. I also served as a tutor in the HIAST Guitar Club, helping beginners take their first steps in music.</p>
 								</article>
-								
-								
-							
-								
-								
-								
-								<article>
-									<header>
-										<span class="date">2017, 2019</span>
-										<h2><a href="#">Team Member<br /></a>
-										<a href = "https://www.dcagency.org/">Syrian National Physics Olympiad</a></h2>
-									</header>
-									<!-- Image Slideshow -->
-									<div style="text-align: center;">
-									  <img id="slideshow-olympiad" src="images/Im_olympiad1.jpg" alt="Slideshow Image" style="width: 100%; max-width: 600px; border-radius: 5px;">
-
-									</div>
-
-									<script>
-									  const images_olympiad = [
-										"images/Im_olympiad1.jpg",
-										"images/Im_olympiad2.jpg",
-										"images/Im_olympiad3.jpg",
-										"images/Im_olympiad4.jpg",
-										"images/Im_olympiad5.jpg",
-										"images/Im_olympiad6.jpg"
-
-									  ];
-
-									  let index_olympiad = 0;
-									  const slideshow_olympiad = document.getElementById("slideshow-olympiad");
-
-									  setInterval(() => {
-										index_olympiad = (index_olympiad + 1) % images_olympiad.length;
-										slideshow_olympiad.src = images_olympiad[index_olympiad];
-									  }, 3000);
-									</script>
-								</article>
-								
-								
-								
-								
 
 							</section>
 
-
 					</div>
 
-					<!-- Footer -->
 					<footer id="footer">
 					  <section>
 						<div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
-						  <h3 style="margin: 0;">Other Sites</h3>
+						  <h3 style="margin: 0;">Connect</h3>
 						  <ul class="icons" style="display: flex; gap: 10px; margin: 0;">
 							<li><a href="https://www.facebook.com/profile.php?id=100009984255181" class="icon brands fa-facebook-f" target="_blank"><span class="label">Facebook</span></a></li>
 							<li><a href="https://www.youtube.com/@kinanali2668" class="icon brands fa-youtube" target="_blank"><span class="label">YouTube</span></a></li>
@@ -255,8 +191,7 @@
 
 			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>

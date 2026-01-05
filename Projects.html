@@ -174,7 +174,7 @@
                         <h3>2. Enter the Neural Network</h3>
                         <p>So I tried something different. I threw away the physics book. I programmed the robot to move randomly—literally stumbling around its workspace like a drunk toddler—to collect a dataset of "Cause and Effect" (Input/Output pairs).</p>
                         
-                        <img src="images/PLACEHOLDER_FOR_FIG_15_FROM_PDF.jpg" alt="Random Walk Data" style="width:100%; border-radius: 5px;">
+                        <img src="images/Im_3RRR_PPM_data.jpg" alt="Random Walk Data" style="width:100%; border-radius: 5px;">
                         <p style="font-size: 0.8em; color: gray;"><em>Fig 2: The "Drunk Toddler" phase. Collecting random walk data to train the brain.</em></p>
 
                         <p>I fed this chaotic mess into a Neural Network. The idea was simple: instead of telling the robot <em>how</em> to move with math, let it <em>learn</em> how to move from experience.</p>
@@ -182,7 +182,7 @@
                         <h3>3. The Victory</h3>
                         <p>The results were humbling. The Neural Network didn't care about friction coefficients or exact link masses. It just learned. As you can see in the spiral test below, the NN (Red/Green) tracked the path way better than the classical Open Loop controller (Blue), which drifted off into space.</p>
                         
-                        <img src="images/PLACEHOLDER_FOR_FIG_31_FROM_PDF.jpg" alt="Spiral Trajectory Results" style="width:100%; border-radius: 5px;">
+                        <img src="images/Im_3RRR_PPM_result.png" alt="Spiral Trajectory Results" style="width:100%; border-radius: 5px;">
 
                         <p><strong>Lesson Learned:</strong> The NN promised to cut model uncertainty, and it delivered. It shifted my engineering challenge from "Modeling Complex Physics" to "Hyperparameter Tuning & Data Collection." Sometimes, it's better to be street smart (Data-Driven) than book smart (Model-Based).</p>
                         
@@ -208,12 +208,12 @@
                                 <h3>1. The "Magic Smoke" Risk</h3>
                                 <p>When you switch a transistor off fast, the inductance fights back. My initial math said a standard RCD Snubber circuit would handle the voltage spikes. I built the prototype, turned it on, and...</p>
                                 
-                                <img src="images/PLACEHOLDER_FOR_FIG_29_FROM_PDF.jpg" alt="The Messy Prototype" style="width:100%; border-radius: 5px;">
+                                <img src="images/Im_flyback.jpg" alt="The Messy Prototype" style="width:100%; border-radius: 5px;">
                                 <p style="font-size: 0.8em; color: gray;"><em>Fig 1: The "Spaghetti" prototype. If it looks messy, it's working.</em></p>
 
                                 <p>The oscilloscope showed <strong>100V spikes</strong> threatening to fry my MOSFET. The culprit? I used a standard <strong>MUR460</strong> diode. It was too slow! It couldn't catch the spike in time. I swapped it for a <strong>1N4148</strong> (a tiny, fast signal diode), and the spikes vanished instantly. Crisis averted.</p>
                                 
-                                <img src="images/PLACEHOLDER_FOR_FIG_30_FROM_PDF.jpg" alt="Oscilloscope Traces" style="width:100%; border-radius: 5px;">
+                                <img src="images/Im_flyback_osc_V_transistor.jpg" alt="Oscilloscope Traces" style="width:100%; border-radius: 5px;">
 
                                 <h3>2. The "Reflex" System</h3>
                                 <p>I didn't just want it to work; I wanted it to survive. What happens if you short the output wires? Usually, fire. I designed a protection circuit using a logic <strong>AND gate</strong> and a comparator. It acts like a nervous system reflex—the moment current spikes, it kills the transistor before the fuse even knows what happened.</p>

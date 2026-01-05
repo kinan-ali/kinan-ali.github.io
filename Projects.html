@@ -1,273 +1,275 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Kinan Ali Portfolio - Projects</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+    <head>
+        <title>Kinan Ali Portfolio - Projects</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
 
-		<div id="wrapper" class="fade-in">
+        <div id="wrapper" class="fade-in">
 
-				<div id="intro">
-						<h1>This is<br />
-						Kinan ALI</h1>
-						<p>Electronic Systems Engineer & HealthTech Master's Student (M1).<br />
-						Recipient of the Excellence Initiative Fellowship (Unistra).<br />
-						Enthusiastic about making Control Theory work in the real world.</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+                <div id="intro">
+                        <h1>This is<br />
+                        Kinan ALI</h1>
+                        <p>Electronic Systems Engineer & HealthTech Master's Student (M1).<br />
+                        Recipient of the Excellence Initiative Fellowship (Unistra).<br />
+                        Enthusiastic about making Control Theory work in the real world.</p>
+                        <ul class="actions">
+                            <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+                        </ul>
+                    </div>
 
-				<header id="header">
-						<a href="index.html" class="logo">Kinan Portfolio</a>
-					</header>
+                <header id="header">
+                        <a href="index.html" class="logo">Kinan Portfolio</a>
+                    </header>
 
-				<nav id="nav">
-					<ul class="links">
-						<li> <a href="index.html">Home</a></li>
-						<li><a href="about.html">About Me</a></li>
-						<li class = "active"> <a href = "Projects.html">Projects</a></li>
-						<li><a href="experience.html">Experience</a></li>
-						<li><a href="Contact.html">Contact</a></li>
-						<li><a href="resume.html">Resume</a></li>
-					</ul>
-					<ul class="icons">
-						<li><a href="https://www.facebook.com/profile.php?id=100009984255181" class="icon brands fa-facebook-f" target="_blank"><span class="label">Facebook</span></a></li>
-						<li><a href="https://www.youtube.com/@kinanali2668" class="icon brands fa-youtube" target="_blank"><span class="label">YouTube</span></a></li>
-						<li><a href="https://www.linkedin.com/in/kinan-ali/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://github.com/kinan-ali" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-					</ul>
-				</nav>
-
-
-				<div id="main">
-					
-					<article class="post featured">
-						  <header class="major">
-							<span class="date">September 20, 2024</span>
-							<h2 style="font-size: 3em;">Adaptive Control for Stewart Platform using Neural Networks</h2>
-						  
-						  <img src="images/Im_stewart_platfrom.png" alt="" style="width:60%;">
-						  </header>
-						  
-						  <p>
-							My graduation project at HIAST. I investigated how Neural Networks can learn to control a 6-DOF robot in real-time, compensating for mechanical imperfections that traditional PID controllers can't see.
-						  </p>
-						  
-						  <div style="background-color: #f4f4f4; border-left: 5px solid #2c3e50; padding: 10px; margin-bottom: 20px;">
-							<p style="margin: 0; font-size: 0.9em;"><strong>🚀 Current Status:</strong> I am currently preparing a research paper detailing the novel adaptive laws developed for this system. As such, the specific mathematical derivations are omitted here, but enjoy the results below!</p>
-						  </div>
-
-						<div class="more-content" style="display: none;">
-							
-							<h3>Step 1: The Mechanical "Upgrade"</h3>
-							<p>The standard platform wasn't enough. I needed more range. I modified the mechanics, installing powerful servos and designing longer arms to expand the workspace.</p>
-							<table style="width:100%; margin-top: 0em;">
-							  <tr>
-								<td style="width:50%; text-align:center;">
-								  <img src="images/Im_stewart1.jpg" alt="Stewart Platform Setup1" style="width:95%; border-radius: 5px;">
-								</td>
-								<td style="width:50%; text-align:center;">
-								  <img src="images/Im_stewart2.jpg" alt="Stewart Platform Setup2" style="width:95%; border-radius: 5px;">
-								</td>
-							  </tr>
-							</table>
-							
-							<p>Of course, I didn't just guess—I validated the new workspace in MATLAB/Simulink first.</p>
-							<img src="images/Im_stewart_workspace.svg" style="width: 80%;">
-							
-							<h3>Step 2: Giving the Robot "Eyes"</h3>
-							<p>To control the platform, I needed to know exactly where it was. My first attempt involved a standard webcam and two ArUco markers.</p>
-							<img src = "images/Im_stewart_camera1.gif" alt="Stewart Platfrom Camera1" style="width: 50%;">
-							<p><strong>The Result?</strong> Chaos. The camera noise was too high, introducing jitter into the control loop. I needed a cleaner signal.</p>
-							
-							<p><strong>The Fix:</strong> I switched to a high-resolution mobile camera stream over WiFi and replaced the single markers with a full <strong>ArUco Board</strong>. Using the Perspective-N-Point (PnP) algorithm, I achieved stable, sub-millimeter pose estimation.</p>
-							<p><em>Lesson learned: Better data beats better algorithms every time.</em></p>
-							<img src = "images/Im_stewart_camera3.png" alt="Stewart Platfrom Camera2" style="width: 50%;">
-							
-							<h3>Step 3: The "Fun" Part</h3>
-							<p>With the sensors calibrated and the Neural Network trained to cancel out the motor backlash, it was time for the ultimate test.</p>
-							<p>Can a Neural Network play Ping Pong?</p>
-
-							<img src="images/Im_stewart_pingpong.gif" alt="Stewart Platform Playing Ping Pong" style="display: block; margin: 20px auto; width: 40%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-							
-						  </div>
-
-						  <ul class="actions special">
-							<li><button class="toggle-button button large" onclick="toggleMore(this)">Full Story</button></li>
-						  </ul>
-						</article>
-
-					
-					<article class="post featured">
-						  <header class="major">
-							<span class="date">October 2024 - January 2025</span>
-							<h2><a style="font-size: 0.6em;">Industrial Washing Machine<br />Control Board</a></h2>
-							<p>Moving from high-level Python AI to the gritty world of embedded hardware. Designed a universal PCB for washing machine automation.</p>
-							
-							<div class="more-content" style="display: none;">
-								<p>While robotics is about abstract math, this project was about <strong>reliability</strong>. I designed a custom PCB based on the <strong>ATmega16</strong> microcontroller to replace aging mechanical timers in industrial machines.</p>
-								
-								<p><strong>Key Engineering Challenges:</strong></p>
-								<ul style="text-align: left; display: inline-block;">
-									<li><strong>Power Control:</strong> Implemented TRIAC-triggered control for high-voltage motors.</li>
-									<li><strong>PID on 8-bit:</strong> wrote a PID speed controller in C from scratch (no fancy libraries!).</li>
-									<li><strong>Simulation:</strong> Fully validated the logic in Proteus before manufacturing.</li>
-								</ul>
-								
-								<p>This project taught me that in the industrial world, code doesn't just need to work—it needs to survive voltage spikes and EMI.</p>
-							</div>
-
-							<ul class="actions special">
-								<li><button class="toggle-button button large" onclick="toggleMore(this)">Full Story</button></li>
-							</ul>
-						  </header>
-						</article>
+                <nav id="nav">
+                    <ul class="links">
+                        <li> <a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li class = "active"> <a href = "Projects.html">Projects</a></li>
+                        <li><a href="experience.html">Experience</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                    </ul>
+                    <ul class="icons">
+                        <li><a href="https://www.facebook.com/profile.php?id=100009984255181" class="icon brands fa-facebook-f" target="_blank"><span class="label">Facebook</span></a></li>
+                        <li><a href="https://www.youtube.com/@kinanali2668" class="icon brands fa-youtube" target="_blank"><span class="label">YouTube</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/kinan-ali/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/kinan-ali" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </nav>
 
 
-					<article class="post featured">
-							<header class="major">
-								<span class="date">May 20, 2024</span>
-								<h2><a style="font-size: 0.6em;">Obstacle Avoidance<br />Extended Potential Field</a></h2>
-								<p>Implementing the Extended Potential Field algorithm on an E-Puck robot.</p>
-								<div style="text-align: center; margin-top: 20px;">
-								  <iframe width="560" height="315" 
-									src="https://www.youtube.com/embed/DmXzhAzQMgI" 
-									title="Obstacle Avoidance" frameborder="0" 
-									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-									allowfullscreen>
-								  </iframe>
-								</div>
-							</header>
-						</article>
-						
-						
-					<article class="post featured">
-							<header class="major">
-								<span class="date">September 15, 2023</span>
-								<h2><a style="font-size: 0.6em;">Data-Driven vs Classical Control<br />3RRR Parallel Manipulator</a></h2>
-								<p>A battle between traditional control theory and modern data-driven approaches. Who wins?</p>
-								
-								<div style="text-align: center; margin-top: 20px;">
-								  <iframe width="560" height="315" 
-									src="https://www.youtube.com/embed/Ndt5K4WTslM" 
-									title="3RRR PPM Control Comparison" frameborder="0" 
-									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-									allowfullscreen>
-								  </iframe>
-								</div>
-								
-								
-					<div class="more-content" style="display: none;">
-						<p><strong>The Premise:</strong> We know how to control robots when we have a perfect mathematical model (Mass, Length, Inertia). But what if the model is wrong?</p>
-						
-						<h3>1. The Theoretical Setup</h3>
-						<p>Before writing code, I had to understand the robot's limits. I performed a full <strong>Singularity Analysis</strong> to find the "danger zones" where the robot loses control.</p>
-						<img src = "images/Im_3RRR_PPM_singularities.jpg" alt = "Singularity Map" style ="width:100%;">
-						<p>Using these equations, I mapped out the safe workspace (shown below), ensuring my path planning algorithms would never force the robot into a locked position.</p>
-						<img src = "images/Im_3RRR_PPM_map.jpg" alt="Workspace Map" style="width:100%;">
-						
-						<h3>2. The Controller</h3>
-						<p>I designed a Neural Network to learn the Inverse Kinematics. The idea is simple: instead of telling the robot "move arm A by 10 degrees," we ask the network "what motors should I move to get to position X?"</p>
-						<img src = "images/Im_3RRR_PPM_control2.jpg" alt = "Neural Network Control Block" style="width:80%;">
-						
-						<p>To visualize the data in real-time, I built a custom GUI in Python (below) that streams the camera feed and overlays the target trajectory.</p>
-						<img src="images/Im_3RRR_PPM_gui.png" alt="Python Control GUI" style="width:100%;">
+                <div id="main">
+                    
+                    <article class="post featured">
+                          <header class="major">
+                            <span class="date">September 20, 2024</span>
+                            <h2 style="font-size: 3em;">Adaptive Control for Stewart Platform using Neural Networks</h2>
+                          
+                          <img src="images/Im_stewart_platfrom.png" alt="" style="width:60%;">
+                          </header>
+                          
+                          <p>
+                            My graduation project at HIAST. I investigated how Neural Networks can learn to control a 6-DOF robot in real-time, compensating for mechanical imperfections that traditional PID controllers can't see.
+                          </p>
+                          
+                          <div style="background-color: #f4f4f4; border-left: 5px solid #2c3e50; padding: 10px; margin-bottom: 20px;">
+                            <p style="margin: 0; font-size: 0.9em;"><strong>🚀 Current Status:</strong> I am currently preparing a research paper detailing the novel adaptive laws developed for this system. As such, the specific mathematical derivations are omitted here, but enjoy the results below!</p>
+                          </div>
 
-						<h3>3. The Results</h3>
-						<p>I tested the controller on a physical prototype. The results (below) showed that the Data-Driven method could track the reference trajectory almost as well as the classical method, but without needing <em>any</em> physical measurements of link lengths.</p>
-						<img src = "images/Im_3RRR_PPM_result.png" alt="Trajectory Results" style="width:80%;">
-						
-						<p><em>This project sparked my interest in Contraction Theory: How can we mathematically guarantee that these learned controllers won't go unstable?</em></p>
-						
-					  </div>
+                        <div class="more-content" style="display: none;">
+                            
+                            <h3>Step 1: The Mechanical "Upgrade"</h3>
+                            <p>The standard platform wasn't enough. I needed more range. I modified the mechanics, installing powerful servos and designing longer arms to expand the workspace.</p>
+                            <table style="width:100%; margin-top: 0em;">
+                              <tr>
+                                <td style="width:50%; text-align:center;">
+                                  <img src="images/Im_stewart1.jpg" alt="Stewart Platform Setup1" style="width:95%; border-radius: 5px;">
+                                </td>
+                                <td style="width:50%; text-align:center;">
+                                  <img src="images/Im_stewart2.jpg" alt="Stewart Platform Setup2" style="width:95%; border-radius: 5px;">
+                                </td>
+                              </tr>
+                            </table>
+                            
+                            <p>Of course, I didn't just guess—I validated the new workspace in MATLAB/Simulink first.</p>
+                            <img src="images/Im_stewart_workspace.svg" style="width: 80%;">
+                            
+                            <h3>Step 2: Giving the Robot "Eyes"</h3>
+                            <p>To control the platform, I needed to know exactly where it was. My first attempt involved a standard webcam and two ArUco markers.</p>
+                            <img src = "images/Im_stewart_camera1.gif" alt="Stewart Platfrom Camera1" style="width: 50%;">
+                            <p><strong>The Result?</strong> Chaos. The camera noise was too high, introducing jitter into the control loop. I needed a cleaner signal.</p>
+                            
+                            <p><strong>The Fix:</strong> I switched to a high-resolution mobile camera stream over WiFi and replaced the single markers with a full <strong>ArUco Board</strong>. Using the Perspective-N-Point (PnP) algorithm, I achieved stable, sub-millimeter pose estimation.</p>
+                            <p><em>Lesson learned: Better data beats better algorithms every time.</em></p>
+                            <img src = "images/Im_stewart_camera3.png" alt="Stewart Platfrom Camera2" style="width: 50%;">
+                            
+                            <h3>Step 3: The "Fun" Part</h3>
+                            <p>With the sensors calibrated and the Neural Network trained to cancel out the motor backlash, it was time for the ultimate test.</p>
+                            <p>Can a Neural Network play Ping Pong?</p>
 
-					  <ul class="actions special">
-						<li><button class="toggle-button button large" onclick="toggleMore(this)">Full Story</button></li>
-					  </ul>
-								
-							</header>
-						</article>
-						
-						
-					<article class="post featured">
-							<header class="major">
-								<span class="date">June 5, 2023</span>
-								<h2><a style="font-size: 0.6em;">Flyback DC-DC Converter Design</a></h2>
-								<p>A power electronics workshop at HIAST. A lesson in "Optimized Engineering."</p>
-							<div class="more-content" style="display: none;">
-							  
-								<p>Any engineer can build a circuit that works if they have an infinite budget. The challenge is building it <strong>safely</strong> and <strong>cheaply</strong>.</p>
-								
-								<h3>1. Design & Simulation</h3>
-								<p>We chose the <strong>Discontinuous Current Mode (DCM)</strong> to simplify the control loop. I modeled the entire circuit in MATLAB and PSpice first.</p>
-								<img src="images/Im_flyback_pspice.jpg" alt="PSpice Simulation" style="width:70%;">
-								
-								<h3>2. Engineering Economics (The "Cost" Factor)</h3>
-								<p>My goal was to calculate the <em>minimal safe quantities</em> for every component. Over-specifying is wasted money.</p>
-								<ul style="text-align: left;">
-									<li><strong>The Transistor Dilemma:</strong> My calculations showed the voltage spike ($V_{ds}$) could reach <strong>105V</strong>. The "safe" choice would be a 200V transistor (expensive). I chose the <strong>IRF3710</strong> (rated for 100V) to save cost. It was "living on the edge," but testing showed that with a properly tuned Snubber circuit, the real spikes were manageable.</li>
-									<li><strong>The "Magic Smoke" Moment:</strong> Initially, I used a standard diode for the Snubber circuit. It was too slow! The voltage spikes shot up to 120V on the scope (danger zone). I swapped it for a fast <strong>1N4148</strong>, and the spikes vanished immediately.</li>
-								</ul>
+                            <img src="images/Im_stewart_pingpong.gif" alt="Stewart Platform Playing Ping Pong" style="display: block; margin: 20px auto; width: 40%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                            
+                          </div>
 
-								<h3>3. The Reality</h3>
-								<p>Simulation is clean; reality is messy. Here is the physical prototype (wire spaghetti included) working perfectly.</p>
-								<img src="images/Im_flyback.jpg" alt="Physical Circuit" style="width:80%;">
-								
-							  </div>
+                          <ul class="actions special">
+                            <li><button class="toggle-button button large" onclick="toggleMore(this)">Full Story</button></li>
+                          </ul>
+                        </article>
 
-							  <ul class="actions special">
-								<li><button class="toggle-button button large" onclick="toggleMore(this)">Full Story</button></li>
-							  </ul>
+                    
+                    <article class="post featured">
+                          <header class="major">
+                            <span class="date">October 2024 - January 2025</span>
+                            <h2><a style="font-size: 0.6em;">Industrial Washing Machine<br />Control Board</a></h2>
+                            <p>Moving from high-level Python AI to the gritty world of embedded hardware. Designed a universal PCB for washing machine automation.</p>
+                            
+                            <div class="more-content" style="display: none;">
+                                <p>While robotics is about abstract math, this project was about <strong>reliability</strong>. I designed a custom PCB based on the <strong>ATmega16</strong> microcontroller to replace aging mechanical timers in industrial machines.</p>
+                                
+                                <p><strong>Key Engineering Challenges:</strong></p>
+                                <ul style="text-align: left; display: inline-block;">
+                                    <li><strong>Power Control:</strong> Implemented TRIAC-triggered control for high-voltage motors.</li>
+                                    <li><strong>PID on 8-bit:</strong> wrote a PID speed controller in C from scratch (no fancy libraries!).</li>
+                                    <li><strong>Simulation:</strong> Fully validated the logic in Proteus before manufacturing.</li>
+                                </ul>
+                                
+                                <p>This project taught me that in the industrial world, code doesn't just need to work—it needs to survive voltage spikes and EMI.</p>
+                            </div>
 
-									
-							</header>
-						</article>
+                            <ul class="actions special">
+                                <li><button class="toggle-button button large" onclick="toggleMore(this)">Full Story</button></li>
+                            </ul>
+                          </header>
+                        </article>
 
-				</div>
 
-				<footer id="footer">
-				  <section>
-					<div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
-					  <h3 style="margin: 0;">Connect</h3>
-					  <ul class="icons" style="display: flex; gap: 10px; margin: 0;">
-						<li><a href="https://www.facebook.com/profile.php?id=100009984255181" class="icon brands fa-facebook-f" target="_blank"><span class="label">Facebook</span></a></li>
-						<li><a href="https://www.youtube.com/@kinanali2668" class="icon brands fa-youtube" target="_blank"><span class="label">YouTube</span></a></li>
-						<li><a href="https://www.linkedin.com/in/kinan-ali/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://github.com/kinan-ali" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-					  </ul>
-					</div>
-				  </section>
-				</footer>
+                    <article class="post featured">
+                            <header class="major">
+                                <span class="date">May 20, 2024</span>
+                                <h2><a style="font-size: 0.6em;">Obstacle Avoidance<br />Extended Potential Field</a></h2>
+                                <p>Implementing the Extended Potential Field algorithm on an E-Puck robot.</p>
+                                <div style="text-align: center; margin-top: 20px; width: 100%;">
+                                  <iframe style="width: 100%; height: 450px; border-radius: 10px;"
+                                    src="https://www.youtube.com/embed/DmXzhAzQMgI" 
+                                    title="Obstacle Avoidance" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                  </iframe>
+                                </div>
+                            </header>
+                        </article>
+                        
+                        
+                    <article class="post featured">
+                            <header class="major">
+                                <span class="date">September 15, 2023</span>
+                                <h2><a style="font-size: 0.6em;">Data-Driven vs Classical Control<br />3RRR Parallel Manipulator</a></h2>
+                                <p>A battle between traditional "Book Smart" Control and "Street Smart" Neural Networks.</p>
+                                
+                                <div style="text-align: center; margin-top: 20px; width: 100%;">
+                                  <iframe style="width: 100%; height: 450px; border-radius: 10px;"
+                                    src="https://www.youtube.com/embed/Ndt5K4WTslM" 
+                                    title="3RRR PPM Control Comparison" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                  </iframe>
+                                </div>
+                                
+                                
+                    <div class="more-content" style="display: none;">
+                        <h3>1. The "Perfect Model" Trap</h3>
+                        <p>We are taught in school that if you know the Mass, Length, and Inertia, you can control anything. I took that to heart. I derived the Jacobian matrices and calculated the <strong>Singularities</strong> (the robot's "Bermuda Triangles" where it loses control).</p>
+                        
+                        <img src="images/Im_3RRR_PPM_map.jpg" alt="Singularity Map - The Danger Zones" style="width:100%; border-radius: 5px;">
+                        <p style="font-size: 0.8em; color: gray;"><em>Fig 1: The "Danger Zones" (Singularities) where the robot locks up. I had to map these to avoid them.</em></p>
 
-		</div>
+                        <p>But when I ran the classical controller, reality hit. The cables pulled slightly, the friction wasn't perfectly linear, and my "perfect" model started to drift. It turns out, the real world doesn't care about your differential equations.</p>
 
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+                        <h3>2. Enter the Neural Network</h3>
+                        <p>So I tried something different. I threw away the physics book. I programmed the robot to move randomly—literally stumbling around its workspace like a drunk toddler—to collect a dataset of "Cause and Effect" (Input/Output pairs).</p>
+                        
+                        <img src="images/PLACEHOLDER_FOR_FIG_15_FROM_PDF.jpg" alt="Random Walk Data" style="width:100%; border-radius: 5px;">
+                        <p style="font-size: 0.8em; color: gray;"><em>Fig 2: The "Drunk Toddler" phase. Collecting random walk data to train the brain.</em></p>
 
-		<script>
-		  function toggleMore(button) {
-			const article = button.closest('article');
-			const content = article.querySelector('.more-content');
+                        <p>I fed this chaotic mess into a Neural Network. The idea was simple: instead of telling the robot <em>how</em> to move with math, let it <em>learn</em> how to move from experience.</p>
 
-			if (content.style.display === "none" || content.style.display === "") {
-			  content.style.display = "block";
-			  button.innerText = "Show Less";
-			} else {
-			  content.style.display = "none";
-			  button.innerText = "Full Story";
-			}
-		  }
-		</script>
+                        <h3>3. The Victory</h3>
+                        <p>The results were humbling. The Neural Network didn't care about friction coefficients or exact link masses. It just learned. As you can see in the spiral test below, the NN (Red/Green) tracked the path way better than the classical Open Loop controller (Blue), which drifted off into space.</p>
+                        
+                        <img src="images/PLACEHOLDER_FOR_FIG_31_FROM_PDF.jpg" alt="Spiral Trajectory Results" style="width:100%; border-radius: 5px;">
 
-	</body>
+                        <p><strong>Lesson Learned:</strong> The NN promised to cut model uncertainty, and it delivered. It shifted my engineering challenge from "Modeling Complex Physics" to "Hyperparameter Tuning & Data Collection." Sometimes, it's better to be street smart (Data-Driven) than book smart (Model-Based).</p>
+                        
+                      </div>
+
+                      <ul class="actions special">
+                        <li><button class="toggle-button button large" onclick="toggleMore(this)">Full Story</button></li>
+                      </ul>
+                                
+                            </header>
+                        </article>
+                        
+                        
+                    <article class="post featured">
+                            <header class="major">
+                                <span class="date">June 5, 2023</span>
+                                <h2><a style="font-size: 0.6em;">Flyback DC-DC Converter Design</a></h2>
+                                <p>Boosting 10V to 24V without blowing up the lab. A lesson in "Controlled Explosions."</p>
+                            <div class="more-content" style="display: none;">
+                              
+                                <p>Simulations are like Instagram: they show you the perfect life. Reality is the oscilloscope showing you 100V spikes because you chose a "lazy" diode. My goal was to build a Flyback converter to boost 10V to 24V. Why Flyback? It's the Swiss Army Knife of power electronics: versatile, isolated, and efficient.</p>
+                                
+                                <h3>1. The "Magic Smoke" Risk</h3>
+                                <p>When you switch a transistor off fast, the inductance fights back. My initial math said a standard RCD Snubber circuit would handle the voltage spikes. I built the prototype, turned it on, and...</p>
+                                
+                                <img src="images/PLACEHOLDER_FOR_FIG_29_FROM_PDF.jpg" alt="The Messy Prototype" style="width:100%; border-radius: 5px;">
+                                <p style="font-size: 0.8em; color: gray;"><em>Fig 1: The "Spaghetti" prototype. If it looks messy, it's working.</em></p>
+
+                                <p>The oscilloscope showed <strong>100V spikes</strong> threatening to fry my MOSFET. The culprit? I used a standard <strong>MUR460</strong> diode. It was too slow! It couldn't catch the spike in time. I swapped it for a <strong>1N4148</strong> (a tiny, fast signal diode), and the spikes vanished instantly. Crisis averted.</p>
+                                
+                                <img src="images/PLACEHOLDER_FOR_FIG_30_FROM_PDF.jpg" alt="Oscilloscope Traces" style="width:100%; border-radius: 5px;">
+
+                                <h3>2. The "Reflex" System</h3>
+                                <p>I didn't just want it to work; I wanted it to survive. What happens if you short the output wires? Usually, fire. I designed a protection circuit using a logic <strong>AND gate</strong> and a comparator. It acts like a nervous system reflex—the moment current spikes, it kills the transistor before the fuse even knows what happened.</p>
+
+                                <p><strong>Lesson Learned:</strong> In power electronics, your components don't care about your theory. Always over-spec your capacitors, and never trust a slow diode with a fast job.</p>
+                                
+                              </div>
+
+                              <ul class="actions special">
+                                <li><button class="toggle-button button large" onclick="toggleMore(this)">Full Story</button></li>
+                              </ul>
+
+                                    
+                            </header>
+                        </article>
+
+                </div>
+
+                <footer id="footer">
+                  <section>
+                    <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                      <h3 style="margin: 0;">Connect</h3>
+                      <ul class="icons" style="display: flex; gap: 10px; margin: 0;">
+                        <li><a href="https://www.facebook.com/profile.php?id=100009984255181" class="icon brands fa-facebook-f" target="_blank"><span class="label">Facebook</span></a></li>
+                        <li><a href="https://www.youtube.com/@kinanali2668" class="icon brands fa-youtube" target="_blank"><span class="label">YouTube</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/kinan-ali/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/kinan-ali" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+                      </ul>
+                    </div>
+                  </section>
+                </footer>
+
+        </div>
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <script>
+          function toggleMore(button) {
+            const article = button.closest('article');
+            const content = article.querySelector('.more-content');
+
+            if (content.style.display === "none" || content.style.display === "") {
+              content.style.display = "block";
+              button.innerText = "Show Less";
+            } else {
+              content.style.display = "none";
+              button.innerText = "Full Story";
+            }
+          }
+        </script>
+
+    </body>
 </html>

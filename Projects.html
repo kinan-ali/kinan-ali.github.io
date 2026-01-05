@@ -169,12 +169,15 @@
 						<p>Before writing code, I had to understand the robot's limits. I performed a full <strong>Singularity Analysis</strong> to find the "danger zones" where the robot loses control.</p>
 						<img src = "images/Im_3RRR_PPM_singularities.jpg" alt = "Singularity Map" style ="width:100%;">
 						<p>Using these equations, I mapped out the safe workspace (shown below), ensuring my path planning algorithms would never force the robot into a locked position.</p>
-						<img src = "images/Im_3RRR_PPM_map.jpg" alt="Workspace Map" style="width:80%;">
+						<img src = "images/Im_3RRR_PPM_map.jpg" alt="Workspace Map" style="width:100%;">
 						
 						<h3>2. The Controller</h3>
 						<p>I designed a Neural Network to learn the Inverse Kinematics. The idea is simple: instead of telling the robot "move arm A by 10 degrees," we ask the network "what motors should I move to get to position X?"</p>
 						<img src = "images/Im_3RRR_PPM_control2.jpg" alt = "Neural Network Control Block" style="width:80%;">
 						
+						<p>To visualize the data in real-time, I built a custom GUI in Python (below) that streams the camera feed and overlays the target trajectory.</p>
+						<img src="images/Im_3RRR_PPM_gui.png" alt="Python Control GUI" style="width:100%;">
+
 						<h3>3. The Results</h3>
 						<p>I tested the controller on a physical prototype. The results (below) showed that the Data-Driven method could track the reference trajectory almost as well as the classical method, but without needing <em>any</em> physical measurements of link lengths.</p>
 						<img src = "images/Im_3RRR_PPM_result.png" alt="Trajectory Results" style="width:80%;">
@@ -198,18 +201,17 @@
 								<p>A power electronics workshop at HIAST. A lesson in "Optimized Engineering."</p>
 							<div class="more-content" style="display: none;">
 							  
-								<p>This project wasn't just about making 24V from 12V. It was about doing it <strong>safely</strong> and <strong>cheaply</strong>.</p>
+								<p>Any engineer can build a circuit that works if they have an infinite budget. The challenge is building it <strong>safely</strong> and <strong>cheaply</strong>.</p>
 								
 								<h3>1. Design & Simulation</h3>
 								<p>We chose the <strong>Discontinuous Current Mode (DCM)</strong> to simplify the control loop. I modeled the entire circuit in MATLAB and PSpice first.</p>
 								<img src="images/Im_flyback_pspice.jpg" alt="PSpice Simulation" style="width:70%;">
 								
-								<h3>2. Component Optimization (The Engineering Part)</h3>
-								<p>Anyone can build a converter if they have infinite budget. The challenge was finding the <em>minimal safe</em> components.</p>
+								<h3>2. Engineering Economics (The "Cost" Factor)</h3>
+								<p>My goal was to calculate the <em>minimal safe quantities</em> for every component. Over-specifying is wasted money.</p>
 								<ul style="text-align: left;">
-									<li><strong>The Transistor Dilemma:</strong> My calculations showed the voltage spike ($V_{ds}$) could reach <strong>105V</strong>. To save cost, I chose the <strong>IRF3710</strong> (rated for 100V). It was "living on the edge," but testing showed the real spikes were manageable with a good Snubber circuit.</li>
-									<li><strong>The "Magic Smoke" Moment:</strong> Initially, I used a standard diode for the Snubber circuit. It was too slow! The voltage spikes shot up to 120V on the scope. I swapped it for a fast <strong>1N4148</strong>, and the spikes vanished immediately.</li>
-									<li><strong>The Transformer:</strong> I wound it myself—7 turns on the primary, 10 on the secondary—calculating the exact air gap to prevent saturation.</li>
+									<li><strong>The Transistor Dilemma:</strong> My calculations showed the voltage spike ($V_{ds}$) could reach <strong>105V</strong>. The "safe" choice would be a 200V transistor (expensive). I chose the <strong>IRF3710</strong> (rated for 100V) to save cost. It was "living on the edge," but testing showed that with a properly tuned Snubber circuit, the real spikes were manageable.</li>
+									<li><strong>The "Magic Smoke" Moment:</strong> Initially, I used a standard diode for the Snubber circuit. It was too slow! The voltage spikes shot up to 120V on the scope (danger zone). I swapped it for a fast <strong>1N4148</strong>, and the spikes vanished immediately.</li>
 								</ul>
 
 								<h3>3. The Reality</h3>
